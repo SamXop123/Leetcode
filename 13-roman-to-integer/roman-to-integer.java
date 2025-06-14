@@ -1,7 +1,7 @@
 class Solution {
     public int romanToInt(String s) {
         int counter = 0;
-        int prev = 0; // To handle subtraction cases
+        int prev = 0;
 
         for(int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
@@ -30,7 +30,7 @@ class Solution {
             }
 
             if (prev < value) {
-                counter += (value - 2 * prev); // Adjust for subtraction cases
+                counter += (value - 2 * prev);
             } else {
                 counter += value;
             }
