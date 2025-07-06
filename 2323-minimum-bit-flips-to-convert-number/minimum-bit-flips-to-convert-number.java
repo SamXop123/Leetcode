@@ -53,7 +53,8 @@ public int minBitFlips(int start, int goal) {
             step++;
         }
     }
-
+    return step;
+}
     return step;
 }
 
