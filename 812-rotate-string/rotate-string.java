@@ -1,11 +1,10 @@
 class Solution {
     public boolean rotateString(String s, String goal) {
         
-        int n = s.length();
         boolean isEqual = false;
         String newString = "";
-        
-        for(int i = 0; i < n; i++) {
+
+        for(int i = 0; i < s.length(); i++) {
             String A = s.substring(i);       
             String B = s.substring(0, i);   
             newString = A + B; 
