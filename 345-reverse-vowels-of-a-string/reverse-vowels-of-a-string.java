@@ -1,8 +1,9 @@
 class Solution {
     public String reverseVowels(String s) {
+
         List<Character> vowelList = new ArrayList<>();
-        String vowels = "aeiouAEIOU";
         StringBuilder result = new StringBuilder();
+        String vowels = "aeiouAEIOU";
 
         for (int i = 0; i < s.length(); i++) {
             char ch = s.charAt(i);
@@ -10,10 +11,9 @@ class Solution {
                 vowelList.add(ch);
             }
         }
-
         Collections.reverse(vowelList);
-        int vowelIndex = 0;
 
+        int vowelIndex = 0;
         for (int i = 0; i < s.length(); i++) {
             char ch = s.charAt(i);
             if (vowels.indexOf(ch) != -1) {
@@ -23,7 +23,6 @@ class Solution {
                 result.append(ch);
             }
         }
-
         return result.toString();
     }
 }
