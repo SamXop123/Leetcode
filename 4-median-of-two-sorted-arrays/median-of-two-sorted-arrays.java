@@ -26,6 +26,7 @@ class Solution {
             i++;
             x++;
         }
+
         while (j < n) {
             merged[x] = nums2[j];
             j++;
