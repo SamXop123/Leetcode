@@ -26,7 +26,6 @@ class Solution {
             i++;
             x++;
         }
-
         while (j < n) {
             merged[x] = nums2[j];
             j++;
@@ -37,13 +36,11 @@ class Solution {
             int a = merged[((n+m) / 2) - 1];
             int b = merged[(n+m) / 2];
             median = ((double) a + (double) b) / 2;
-        } 
-        else {
+        } else {
             median = (double) merged[(n+m) / 2];
         }
 
         String formatted = String.format("%.5f", median);
         return Double.parseDouble(formatted);
-
     }
 }
