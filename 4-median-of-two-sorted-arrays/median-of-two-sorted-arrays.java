@@ -10,17 +10,11 @@ class Solution {
         int j = 0;
         int x = 0;
 
-        while(i < m && j < n) {
-            if(nums1[i] > nums2[j]) {
-                merged[x] = nums2[j];
-                j++;
-            } else if (nums1[i] < nums2[j]) {
+        while (i < m && j < n) {
+            if (nums1[i] <= nums2[j]) {
                 merged[x] = nums1[i];
                 i++;
             } else {
-                merged[x] = nums1[i];
-                i++;
-                x++;
                 merged[x] = nums2[j];
                 j++;
             }
@@ -32,7 +26,6 @@ class Solution {
             i++;
             x++;
         }
-
         while (j < n) {
             merged[x] = nums2[j];
             j++;
