@@ -14,12 +14,8 @@ class Solution {
         boolean goingdown = false;
 
         for (int i = 0; i < s.length(); i++) {
-
             char c = s.charAt(i);
-
-            String current = rows[currentRow];
-            current += c;
-            rows[currentRow] = current;
+            rows[currentRow] += c;
 
             if (currentRow==0 || currentRow == numRows-1) {
                 goingdown = !goingdown;
