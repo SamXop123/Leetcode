@@ -11,10 +11,10 @@ class Solution {
         }
 
         int i = 0;
-        boolean common = true;
-
         while(i < minLength) {
             char commonChar = strs[0].charAt(i);
+            boolean common = true;
+
             for(int j = 0; j < strs.length; j++) {
                 if(commonChar != strs[j].charAt(i)) {
                     common = false;
@@ -23,6 +23,8 @@ class Solution {
             }
             if(common) {
                 result += commonChar;
+            } else {
+                break;
             }
             i++;
         }
