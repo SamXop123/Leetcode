@@ -3,7 +3,7 @@ class Solution {
         
         if (s.isEmpty()) return true;
 
-        String raw = s.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+        String raw = s.replaceAll("[\\p{Punct}\\s]", "").toLowerCase();
 
         for (int i = 0; i < raw.length(); i++) {
             if (raw.charAt(i) != raw.charAt(raw.length() - i - 1)) {
