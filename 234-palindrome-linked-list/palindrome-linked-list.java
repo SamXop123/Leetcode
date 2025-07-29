@@ -42,7 +42,8 @@ class Solution {
 
         ListNode middle = findMiddle(head);
         ListNode secondHalf = reverse(middle.next);
-
+        middle.next = null;
+        
         ListNode firstHalf = head;
         while(secondHalf != null) {
             if(firstHalf.val != secondHalf.val) {
