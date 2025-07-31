@@ -7,16 +7,14 @@ class Solution {
         int right = n-1;
 
         while(left < right) {
-            int leftLineHeight = height[left];
-            int rightLineHeight = height[right];
             int current = 0;
             int i = right - left;
 
-            if(rightLineHeight > leftLineHeight) {
-                current = leftLineHeight*i;
+            if(height[right] > height[left]) {
+                current = height[left]*i;
                 left++;
             } else {
-                current = rightLineHeight*i;
+                current = height[right]*i;
                 right--;
             }
 
