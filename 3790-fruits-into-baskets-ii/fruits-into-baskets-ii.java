@@ -7,7 +7,7 @@ class Solution {
         for (int i = 0; i < n; i++) {
             boolean placed = false;
             for (int j = 0; j < n; j++) {
-                if (baskets[j] >= fruits[i] && !used[j]) {
+                if (!used[j] && baskets[j] >= fruits[i]) {
                     used[j] = true;
                     placed = true;
                     break;
