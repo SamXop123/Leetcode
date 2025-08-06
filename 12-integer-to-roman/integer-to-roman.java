@@ -1,26 +1,26 @@
 class Solution {
-    public static int[][] ROMAN_VALUES = {
+    public static int[][] RomanValues = {
         {1000, 'M'},
-        {900, 'C', 'M'}, // CM = 900
+        {900, 'C', 'M'},
         {500, 'D'},
-        {400, 'C', 'D'}, // CD = 400
+        {400, 'C', 'D'},
         {100, 'C'},
-        {90, 'X', 'C'},  // XC = 90
+        {90, 'X', 'C'},
         {50, 'L'},
-        {40, 'X', 'L'},  // XL = 40
+        {40, 'X', 'L'},
         {10, 'X'},
-        {9, 'I', 'X'},   // IX = 9
+        {9, 'I', 'X'},
         {5, 'V'},
-        {4, 'I', 'V'},   // IV = 4
+        {4, 'I', 'V'},
         {1, 'I'}
     };
 
     public String intToRoman(int num) {
         StringBuilder result = new StringBuilder();
 
-        for (int[] mapping : ROMAN_VALUES) {
+        for (int[] mapping : RomanValues) {
             int value = mapping[0];
-            
+
             while (num >= value) {
                 if (mapping.length == 2) {
                     result.append((char)mapping[1]);
