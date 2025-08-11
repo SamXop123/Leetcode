@@ -3,7 +3,6 @@ class Solution {
         final int MOD = 1_000_000_007;
         
         List<Integer> Allpowers = new ArrayList<>();
-
         for (int i = 1; i <= n; i <<= 1) {
             Allpowers.add(i);
         }
@@ -29,19 +28,17 @@ class Solution {
         Collections.reverse(powers);
 
         int[] answers = new int[queries.length];
-
         for (int i = 0; i < queries.length; i++) {
             int left = queries[i][0];
             int right = queries[i][1];
             long currPower = 1;
-
+            
             for (int j = left; j <= right; j++) {
                 currPower = (currPower * powers.get(j)) % MOD;
             }
-
             answers[i] = (int) currPower;
         }
-
+        
         return answers;
     }
 }
