@@ -1,7 +1,5 @@
 class Solution {
     public int reverse(int x) {
-
-        // BigInteger bigX = BigInteger.valueOf(x);
         StringBuilder sb = new StringBuilder(String.valueOf(x));
 
         boolean minus = false;
@@ -11,16 +9,6 @@ class Solution {
         }
 
         sb.reverse();
-        // int left = 0;
-        // int right = sb.length() - 1;
-        // while (left < right) {
-        //     char temp = sb.charAt(left);
-        //     sb.setCharAt(left, sb.charAt(right));
-        //     sb.setCharAt(right, temp);         
-
-        //     left++;
-        //     right--;
-        // }
 
         if(minus) {
             sb.insert(0, '-');
