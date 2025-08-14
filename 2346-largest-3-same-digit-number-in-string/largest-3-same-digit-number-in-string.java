@@ -1,33 +1,29 @@
 class Solution {
     public String largestGoodInteger(String num) {
-
         ArrayList<Integer> goods = new ArrayList<>();
-
-        int k = 0;
-        for(int i = 0; i < num.length()-2; i++) {
-            if(num.charAt(i) == num.charAt(i+1) && num.charAt(i+1) == num.charAt(i+2)) {
-                String temp = "" + num.charAt(i) + num.charAt(i+1) + num.charAt(i+2);
-                goods.add(Integer.parseInt(temp));
-                k++;
+        
+        for (int i = 0; i <= num.length()-3; i++) {
+            if (num.charAt(i) == num.charAt(i+1) && num.charAt(i+1) == num.charAt(i+2)) {
+                String triplet = num.substring(i, i + 3);
+                goods.add(Integer.parseInt(triplet));
             }
         }
         
-        int max = 0;
-        if(goods.size() > 0) { 
-            for(int i = 0; i < goods.size(); i++) {
-                if(goods.get(i) > max) {
-                    max = goods.get(i);
-                }
-            }
-        } else {
+        if (goods.isEmpty()) {
             return "";
         }
-
         
-        if(max == 0) {
-            return "000";
+        int max = goods.get(0);
+        for (int i = 1; i < goods.size(); i++) {
+            if (goods.get(i) > max) {
+                max = goods.get(i);
+            }
         }
-
-        return Integer.toString(max);
+        
+        if (max == 0) {
+            return "000";
+        } else {
+            return String.valueOf(max);
+        }
     }
 }
