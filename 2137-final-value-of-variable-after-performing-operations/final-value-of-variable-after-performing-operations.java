@@ -2,11 +2,11 @@ class Solution {
     public int finalValueAfterOperations(String[] operations) {
 
         int x = 0;
-        for (int i = 0; i < operations.length; i++) {
-            String statement = operations[i];
-            if (statement.contains("++")) {
+        for (String op : operations) {
+            if (op.charAt(1) == '+') {
                 x++;
-            } else if (statement.contains("--")) {
+            }
+            else {
                 x--;
             }
         }
