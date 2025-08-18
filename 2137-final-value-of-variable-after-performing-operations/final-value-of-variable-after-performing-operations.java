@@ -4,11 +4,9 @@ class Solution {
         int x = 0;
         for (String op : operations) {
             if (op.charAt(1) == '+') {
-                x++;
-            }
+                x++; }
             else {
-                x--;
-            }
+                x--; }
         }
         return x;
     }
