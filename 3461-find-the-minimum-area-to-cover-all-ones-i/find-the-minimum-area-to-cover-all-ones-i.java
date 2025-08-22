@@ -1,19 +1,28 @@
 class Solution {
     public int minimumArea(int[][] grid) {
-        int minRow = Integer.MAX_VALUE;
-        int maxRow = Integer.MIN_VALUE;
-        int minCol = Integer.MAX_VALUE;
-        int maxCol = Integer.MIN_VALUE;
+        int rows = grid.length;
+        int cols = grid[0].length;
+        int minRow = -1;
+        int maxRow = -1;
+        int minCol = -1;
+        int maxCol = -1;
         boolean foundOne = false;
         
-        for (int i = 0; i < grid.length; i++) {
-            for (int j = 0; j < grid[0].length; j++) {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
                 if (grid[i][j] == 1) {
-                    foundOne = true;
-                    if (i < minRow) minRow = i;
-                    if (i > maxRow) maxRow = i;
-                    if (j < minCol) minCol = j;
-                    if (j > maxCol) maxCol = j;
+                    if (!foundOne) {
+                        minRow = i;
+                        maxRow = i;
+                        minCol = j;
+                        maxCol = j;
+                        foundOne = true;
+                    } else {
+                        if (i < minRow) minRow = i;
+                        else if (i > maxRow) maxRow = i;
+                        if (j < minCol) minCol = j;
+                        else if (j > maxCol) maxCol = j;
+                    }
                 }
             }
         }
