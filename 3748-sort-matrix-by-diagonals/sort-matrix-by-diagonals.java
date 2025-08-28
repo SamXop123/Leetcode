@@ -1,34 +1,36 @@
 class Solution {
     public int[][] sortMatrix(int[][] grid) {
-        int n = grid.length; 
-
-        for(int i = 0; i < n; i++) {
-            List<Integer> lowerDiagonals = new ArrayList<>();
-
-            for(int j = 0; j+i < n; j++) {
-             lowerDiagonals.add(grid[i+j][j]);
+        int n = grid.length;
+        
+        List<Integer> diagonal = new ArrayList<>();
+        
+        for (int i = 0; i < n; i++) {
+            diagonal.clear();
+            for (int j = 0; i+j < n; j++) {
+                diagonal.add(grid[i+j][j]);
             }
 
-            Collections.sort(lowerDiagonals, Collections.reverseOrder());
+            Collections.sort(diagonal, Collections.reverseOrder());
 
-            for(int j = 0; j+i < n; j++) {
-                grid[i+j][j] = lowerDiagonals.get(j);
+            for (int j = 0; i+j < n; j++) {
+                grid[i+j][j] = diagonal.get(j);
+            }
+        }
+        
+    
+        for (int j = 1; j < n; j++) {
+            diagonal.clear();
+            for (int i = 0; j+i < n; i++) {
+                diagonal.add(grid[i][j+i]);
+            }
+
+            Collections.sort(diagonal);
+
+            for (int i = 0; j+i < n; i++) {
+                grid[i][j+i] = diagonal.get(i);
             }
         }
 
-        for(int j = 1; j < n; j++) {
-            List<Integer> upperDiagonals = new ArrayList<>();
-
-            for(int i = 0; i+j < n; i++) {
-                upperDiagonals.add(grid[i][i+j]);
-            }
-
-            Collections.sort(upperDiagonals);
-
-            for(int i = 0; i+j < n; i++) {
-                grid[i][i+j] = upperDiagonals.get(i);
-            }
-        }
         return grid;
     }
 }
