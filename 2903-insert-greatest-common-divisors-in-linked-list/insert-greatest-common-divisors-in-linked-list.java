@@ -9,26 +9,23 @@
  * }
  */
 class Solution {
-    public static int getGCD(int a, int b) {
-        while(b != 0) {
-            int remainder = a % b;
-            a = b;
-            b = remainder;
+    public int getGCD(int a, int b) {
+        if (b == 0) {
+            return a;
         }
-        return a;
+        return getGCD(b, a % b);
     }
 
     public ListNode insertGreatestCommonDivisors(ListNode head) {
         ListNode temp = head;
 
-        while(temp.next != null) {
-            ListNode newNode = new ListNode();
-
-            newNode.val = getGCD(temp.val, temp.next.val);
-            
+        while(temp != null && temp.next != null) {
+            int gcd = getGCD(temp.val, temp.next.val);
+            ListNode newNode = new ListNode(gcd);
+        
             newNode.next = temp.next;
             temp.next = newNode;
-            temp = temp.next.next;
+            temp = newNode.next;
         }
 
         return head;
