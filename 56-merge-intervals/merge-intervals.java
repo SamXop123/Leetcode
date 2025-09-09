@@ -2,9 +2,9 @@ class Solution {
     public int[][] merge(int[][] intervals) {
         Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
 
-        ArrayList<ArrayList<Integer>> result = new ArrayList<>();
+        List<List<Integer>> result = new ArrayList<>();
 
-        ArrayList<Integer> first = new ArrayList<>();
+        List<Integer> first = new ArrayList<>();
         first.add(intervals[0][0]);
         first.add(intervals[0][1]);
         result.add(first);
@@ -18,7 +18,7 @@ class Solution {
             if (a2 <= b1) {
                 result.get(result.size()-1).set(1, Math.max(b1, b2));
             } else {
-                ArrayList<Integer> newInterval = new ArrayList<>();
+                List<Integer> newInterval = new ArrayList<>();
                 newInterval.add(a2);
                 newInterval.add(b2);
                 result.add(newInterval);
