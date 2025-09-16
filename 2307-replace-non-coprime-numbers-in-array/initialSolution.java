@@ -1,3 +1,5 @@
+// If non-optimized code had a face : 
+
 class Solution {
 
     public long GCD(long x, long y) {
