@@ -2,20 +2,11 @@ class Solution {
     public String longestPalindrome(String s) {
         int n = s.length();
         if(n <= 1) return s;
-        if(n == 2 && s.charAt(0) != s.charAt(1)) {
-            return String.valueOf(s.charAt(0));
-        } 
-        if(n == 2 && s.charAt(0) == s.charAt(1)) {
-            return s;
-        } 
-        if(s.equals("ccd")) {
-            return "cc";
-        }
             
         StringBuilder sb1 = new StringBuilder();
         StringBuilder sb2 = new StringBuilder();
     
-        for (int center = 1; center < n-1; center++) {
+        for (int center = 0; center < n; center++) {
 
             // ODD
             int left = center;
