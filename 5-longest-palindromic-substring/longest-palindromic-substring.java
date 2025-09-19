@@ -5,11 +5,11 @@ class Solution {
             
         StringBuilder sb = new StringBuilder();
 
-        for (int center = 0; center < n; center++) {
+        for (int i = 0; i < n; i++) {
 
             // ODD
-            int left = center;
-            int right = center;
+            int left = i;
+            int right = i;
             while (left >= 0 && right < n && 
             s.charAt(left) == s.charAt(right)) 
             {
@@ -21,8 +21,8 @@ class Solution {
             }
 
             // EVEN
-            left = center;
-            right = center+1;
+            left = i;
+            right = i+1;
             while(left >= 0 && right < n && 
             s.charAt(left) == s.charAt(right)) 
             {
