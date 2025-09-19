@@ -11,11 +11,9 @@ class Solution {
             if(!map.containsKey(sorted)) {
                 map.put(sorted, new ArrayList<>());
             }
-
             map.get(sorted).add(s);
         }
 
         return new ArrayList<>(map.values());
-    
     }
 }
