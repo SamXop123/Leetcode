@@ -6,14 +6,13 @@ class Solution {
             map.put(nums[i], map.getOrDefault(nums[i], 0) + 1);
         }
 
-        int max = 0;
-        for (int count : map.values()) {
-            max = Math.max(max, count);
-        }
-
+        int max = 0; 
         int sum = 0;
         for (int count : map.values()) {
-            if (count == max) {
+            if (count > max) {
+                max = count;
+                sum = count;
+            } else if (count == max) {
                 sum += count;
             }
         }
